@@ -1,0 +1,22 @@
+<!-- homepage content block -->
+{block content}
+    <h1 class="mainTitle" n:block="title">Welcome to my blog</h1>
+
+    <h1>Create new article</h1>
+    {snippet form}
+
+        {control articleForm}
+
+    {/snippet}
+    {snippet list}
+        <!-- n:macro to display certain rows located in articles table -->
+        <div n:foreach="$articles as $id => $article">
+            <h2><a>{$article->getTitle()}</a></h2>
+            <div class="content">{$article->getContent()}</div>
+            <div class="date">Posted by {*$article->getAuthor()*} on {$article->getTimestamp()|date:'F j, Y'}</div>
+        </div>
+        <br>
+    {/snippet}
+
+
+{/block}
