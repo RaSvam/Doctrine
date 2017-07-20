@@ -10,11 +10,14 @@
     {/snippet}
     {snippet list}
         <!-- n:macro to display certain rows located in articles table -->
-        <div n:foreach="$articles as $id => $article">
-            <h2><a>{$article->getTitle()}</a></h2>
+        <div n:foreach="$articles as  $article">
+
+            <h2>{$article->getTitle()}</h2>
             <div class="content">{$article->getContent()}</div>
-            <div class="date">Posted by {*$article->getAuthor()*} on {$article->getTimestamp()|date:'F j, Y'}</div>
+            <div class="date">Posted by <a n:href="Author:showAuthor $article->author->getName()">{$article->author->getName()}</a> on {$article->getTimestamp()|date:'F j, Y'}</div>
+
         </div>
+
         <br>
     {/snippet}
 

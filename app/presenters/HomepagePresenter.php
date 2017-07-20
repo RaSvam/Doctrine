@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Presenters;
+use App\ArticleModule\Entity\Author;
 use App\ArticleModule\Service\ArticleService;
 
 class HomepagePresenter extends BasePresenter {
 
     /** @var ArticleService @inject */
     public $articleService;
+
 
     /** @var \ArticleForm @inject */
     public $articleFormFactory;

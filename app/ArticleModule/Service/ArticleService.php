@@ -27,19 +27,24 @@ class ArticleService {
         return $articles->findBy(array(),array('timestamp'=>'DESC'));
 
     }
+    public function getSingleArticle($id){
+        $article = $this->entityManager->getRepository(Article::class)->findOneBy(array('id'=>$id));
+        return $article;
+    }
+
 
     public function createArticle($values){
         $article = new Article();
-        $author = $this->entityManager->getRepository(Author::class)->findBy(array('name' => $values['name']));
+        $author = $this->entityManager->getRepository(Author::class)->findOneBy(array('name' => $values['name']));
         if (!$author) {
             $author = new Author();
             $author->setName($values['name']);
             $article->setAuthor($author);
             $this->entityManager->persist($author);
             $this->entityManager->flush();
-
         }
 
+        $article->setAuthor($author);
         $article->setTitle($values['title']);
         $article->setTimestamp(new \DateTime("now"));
         $article->setContent($values['content']);

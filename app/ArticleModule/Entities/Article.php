@@ -43,7 +43,7 @@ class Article
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      *
      */
-    protected $author;
+    public $author;
 
 
     /**
@@ -132,6 +132,15 @@ class Article
     {
         $this->email = $email;
     }
+
+    /**
+     * @return Uuid
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
 
 
 }

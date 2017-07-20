@@ -20,5 +20,12 @@ class AuthorService
         $this->entityManager = $entityManager;
     }
 
+    public function getSingleAuthor($name)
+    {
+        $author = $this->entityManager->getRepository(Author::class)->findOneBy(array('name'=>$name));
+        return $author;
+
+    }
+
 
 }

@@ -18,6 +18,7 @@ session:
 services:
 	- App\Model\UserManager
 	- ArticleForm
+	- App\ArticleModule\Service\AuthorService
 	- App\ArticleModule\Service\ArticleService
 	- App\Forms\FormFactory
 	- App\Forms\SignInFormFactory
