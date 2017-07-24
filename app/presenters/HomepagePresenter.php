@@ -39,8 +39,12 @@ class HomepagePresenter extends BasePresenter {
     public function articleFormSucceded($form, array $values){
         //creates new log and stream if posting form succeeded
         $log = new Logger('articles');
+
+        //change to your dir
+        $path = '..\..\Doctrine\log\articles.log';
+
         //logs into the streamhandler stream
-        $log->pushHandler(new StreamHandler('..\..\Doctrine\log\articles.log', Logger::INFO));
+        $log->pushHandler(new StreamHandler($path, Logger::INFO));
         $log->info("New article created",$values);
 
 
