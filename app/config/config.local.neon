@@ -1,0 +1,13 @@
+parameters:
+
+doctrine:
+    user: root
+    password:
+    dbname: doctrine
+
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=doctrine'
+	user:   root
+	password:
+
+
