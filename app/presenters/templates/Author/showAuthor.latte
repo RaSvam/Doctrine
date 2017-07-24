@@ -1,3 +1,7 @@
 {block content}
-
-Hello {$author->getName()}
+Name: <span class="name">{$author->getName()}</span><br>
+Email address: <a href="mailto:{$author->getEmail()}"> {$author->getEmail()} </a><br>
+<br>
+<a n:href="Homepage:default" class="btn btn-default btn-big">
+    <span class="glyphicon glyphicon-arrow-left"></span> Back to all
+</a>

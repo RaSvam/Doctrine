@@ -9,13 +9,12 @@
 
     {/snippet}
     {snippet list}
-        <!-- n:macro to display certain rows located in articles table -->
+        <!-- n:macro to display articles -->
         <div n:foreach="$articles as  $article">
 
             <h2>{$article->getTitle()}</h2>
             <div class="content">{$article->getContent()}</div>
             <div class="date">Posted by <a n:href="Author:showAuthor $article->author->getName()">{$article->author->getName()}</a> on {$article->getTimestamp()|date:'F j, Y'}</div>
-
         </div>
 
         <br>
