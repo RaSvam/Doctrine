@@ -4,7 +4,7 @@
 namespace App\ArticleModule\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use \Ramsey\Uuid\Uuid;
-use Kdyby\Doctrine\EntityManager;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="articles")
@@ -46,10 +46,7 @@ class Article
     public $author;
 
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $email;
+
 
     /**
      * @return mixed
@@ -115,23 +112,6 @@ class Article
         $this->author = $author;
     }
 
-
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
 
     /**
      * @return Uuid

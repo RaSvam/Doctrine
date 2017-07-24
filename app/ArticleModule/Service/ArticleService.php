@@ -40,21 +40,22 @@ class ArticleService {
             $author = new Author();
             $author->setName($values['name']);
             $article->setAuthor($author);
+            $author->setEmail($values['email']);
             $this->entityManager->persist($author);
             $this->entityManager->flush();
         }
-
+        else {
+            $author->setEmail($values['email']);
+        }
         $article->setAuthor($author);
         $article->setTitle($values['title']);
         $article->setTimestamp(new \DateTime("now"));
         $article->setContent($values['content']);
-        $article->setEmail($values['email']);
+        $author->setEmail($values['email']);
         $this->entityManager->persist($article);
         $this->entityManager->flush();
         return $article;
 
     }
-
-
 
 }

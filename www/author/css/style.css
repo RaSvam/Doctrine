@@ -1,10 +1,15 @@
+.name {
+    font-style: italic;
+
+}
 body {
-     font: 1.5em/1.5 Georgia, Verdana, Arial;
-     margin: 0 auto;
-     width: 600px;
-     color: #333;
-     background-color: #fff;
- }
+    font: 20px/1.5 Georgia, Verdana, Arial;
+    padding-top: 15%;
+    margin: 0 auto;
+    width: 600px;
+    color: #333;
+    background-color: #fff;
+}
 .mainTitle {
     font-size: 3em;
 
@@ -25,8 +30,4 @@ body {
 .comment{
     text-decoration: underline;
 
-}
-.delete{
-    font-size: 90%;
-    font-weight:bold;
 }

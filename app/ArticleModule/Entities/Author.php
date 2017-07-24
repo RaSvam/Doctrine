@@ -1,8 +1,8 @@
 <?php
 namespace App\ArticleModule\Entity;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 use \Ramsey\Uuid\Uuid;
+
 
 /**
  * @ORM\Entity
@@ -37,6 +37,12 @@ class Author
     /**
      * @return mixed
      */
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $email;
+
     public function getArticles()
     {
         return $this->articles;
@@ -66,6 +72,29 @@ class Author
         $this->name = $name;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return Uuid
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
 
 

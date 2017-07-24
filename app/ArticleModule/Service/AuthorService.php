@@ -5,6 +5,7 @@ use Nette;
 use Kdyby\Doctrine\EntityManager;
 use App\ArticleModule\Entity\Author;
 
+
 class AuthorService
 {
     use Nette\SmartObject;
